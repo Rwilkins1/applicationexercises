@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather</title>
+</head>
+<body ng-app = "ModelTest">
+	<h1>Hello!</h1>
+	<main ng-controller="WeatherController as weather">
+		<div ng-repeat="place in locations">
+			<h3>{{ place.name }}</h3>
+		</div>
+	</main>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+<script type="text/javascript" src="ModelTest.js"></script>
+</body>
+</html>
