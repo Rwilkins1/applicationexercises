@@ -57,62 +57,55 @@
 					});
 				}
 			}
+
 			$scope.tofahrenheit = function() {
-				if(unit == "celsius") {
-					for(var i = 0; i < display.length; i++) {
-						var content = display[i].html();
+				for(var i = 0; i < display.length; i++) {
+					var content = display[i].html();
+					if(unit == "celsius") {
 						var converted = (content * (9/5)) + 32;
-						var rounded = Math.round(converted * 100)/100;
-						display[i].html(rounded);
-					}
-				} else if(unit == "kelvin") {
-					for(var i = 0; i < display.length; i++) {
-						var content = display[i].html();
+					} else if(unit == "kelvin") {
 						var converted = (content * (9/5)) - 459.67;
-						var rounded = Math.round(converted * 100)/100;
-						display[i].html(rounded);
+					} else {
+						var converted = content;
 					}
+					var rounded = Math.round(converted * 100)/100;
+					display[i].html(rounded);
 				}
-				unit = "fahrenheit";
-			}
+					unit = "fahrenheit";
+				}
 
 			$scope.tocelsius = function() {
 				console.log(unit);
-				if(unit == "fahrenheit") {
-					for(var i = 0; i < display.length; i++) {
-						var content = display[i].html();
+				for(var i = 0; i < display.length; i++) {
+					var content = display[i].html();
+					if(unit == "fahrenheit") {
 						var converted = (content - 32) * (5/9);
-						var rounded = Math.round(converted * 100)/100;
-						display[i].html(rounded);
-					}
-				} else if(unit == "kelvin") {
-					for(var i = 0; i < display.length; i++) {
-						var content = display[i].html();
+					} else if(unit == "kelvin") {
 						var converted = content - 273.15;
-						var rounded = Math.round(converted * 100)/100;
-						display[i].html(rounded);
+					} else {
+						var converted = content;
 					}
+					var rounded = Math.round(converted * 100)/100;
+					display[i].html(rounded);
 				}
 				unit = "celsius";
 			}
 
 			$scope.tokelvin = function() {
-				console.log(unit)
-				if(unit == "fahrenheit") {
-					for(var i = 0; i < display.length; i++) {
-						var content = display[i].html();
+				console.log(unit);
+				for(var i = 0; i < display.length; i++) {
+					var content = display[i].html();
+					if(unit == "fahrenheit") {
 						var converted = (parseInt(content) + 459.67) * (5/9);
-						var rounded = Math.round(converted * 100)/100;
-						display[i].html(rounded);
-					}
-				} else if(unit == "celsius") {
-					for(var i = 0; i < display.length; i++) {
-						var content = display[i].html();
+					} else if(unit == "celsius") {
 						var converted = (parseInt(content) + 273.15);
+					} else {
+						var converted = content;
+					}
 						var rounded = Math.round(converted * 100)/100;
 						display[i].html(rounded);
-					}
 				}
+				
 				unit = "kelvin";
 			}
 
