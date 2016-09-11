@@ -1,0 +1,20 @@
+.display {
+	background-color: skyblue;
+	margin-top: 20px;
+	width: 100px;
+	padding: 5px;
+}
+#fahrenheit {
+	background-color: skyblue;
+	margin-right: 10px;
+	padding: 5px;
+}
+#celcius {
+	background-color: skyblue;
+	margin-right: 10px;
+	padding: 5px;
+}
+#kelvin {
+	background-color: skyblue;
+	padding: 5px;
+}

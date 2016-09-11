@@ -12,33 +12,32 @@
 		});
 	});
 		app.controller("WeatherController", function($scope, $http) {
+			var unit = "fahrenheit";
+			var display = [];
+			display[0] = angular.element("#show0");
+			display[1] = angular.element("#show1");
+			display[2] = angular.element("#show2");
+			display[3] = angular.element("#show3");
+			display[4] = angular.element("#show4");
+			display[5] = angular.element("#show5");
 			
+			var cities = [];
+			cities[0] = "New York";
+			cities[1] = "Chicago";
+			cities[2] = "Philadelphia";
+			cities[3] = "San Antonio";
+			cities[4] = "Los Angeles";
+			cities[5] = "Phoenix";
+
 			$scope.getdata = function() {
-				console.log("The function ran");
-				var display = [];
-				display[0] = angular.element("#show0");
-				display[1] = angular.element("#show1");
-				display[2] = angular.element("#show2");
-				display[3] = angular.element("#show3");
-				display[4] = angular.element("#show4");
-				display[5] = angular.element("#show5");
-				console.log(display[0]);
-				var cities = [];
-				cities[0] = "New York";
-				cities[1] = "Chicago";
-				cities[2] = "Philadelphia";
-				cities[3] = "San Antonio";
-				cities[4] = "Los Angeles";
-				cities[5] = "Phoenix";
 				
 				var url = "http://api.openweathermap.org/data/2.5/forecast/daily";
 				
 				for(var i = 0; i <= 5; i++) {
-					console.log(i);
 					$http.jsonp(url, { params: {
 						APPID: "6793535174d5edec09fb58f14a9263ef",
 						q: cities[i],
-						cnt: 3,
+						cnt: 5,
 						units: "imperial",
 						callback: 'JSON_CALLBACK'
 					}}).success(function(data, status, headers, config) {
@@ -50,7 +49,7 @@
 							console.log("Doing the loop");
 							i = 0;
 						}
-						display[i].append(data.list[0].temp.max + " degrees</h3>");
+						display[i].html(data.list[0].temp.max);
 						i++;
 
 					}).error(function(data, status, headers, config) {
@@ -58,10 +57,19 @@
 					});
 				}
 			}
-			// $scope.getdata();
-			// $scope.getdata("New York", "NYdata");
-			// console.log(NYdata);
-			// console.log($scope.getdata("New York", "NY"));
+
+			$scope.tocelcius = function() {
+				console.log(unit);
+				if(unit == "fahrenheit") {
+					for(var i = 0; i < display.length; i++) {
+						var content = display[i].html()
+						var converted = (content - 32) * (5/9);
+						var rounded = Math.round(converted * 100)/100;
+						display[i].html(rounded);
+					}
+				}
+				unit = "celcius";
+			}
 
 			$scope.locations = [{
 				name: "New York",

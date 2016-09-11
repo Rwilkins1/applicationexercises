@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="weather.css">
 	<title>Weather</title>
 </head>
 <body ng-app = "ModelTest">
 	<h1>Hello!</h1>
 	<main ng-controller="WeatherController as weather" ng-init="getdata()">
-		<div id="show0">New York: </div>
-		<div id="show1">Chicago: </div>
-		<div id="show2">Philadelphia: </div>
-		<div id="show3">San Antonio: </div>
-		<div id="show4">Los Angeles: </div>
-		<div id="show5">Phoenix: </div>
+		<span id="fahrenheit">F</span><span ng-click="tocelcius()" id="celcius">C</span><span id="kelvin">K</span>
+		<div class="display">
+			New York:<div id="show0"></div>
+		</div>
+		<div class="display">
+			Chicago: <div id="show1"></div>
+		</div>
+		<div class="display">
+			Philadelphia: <div id="show2"></div>
+		</div>
+		<div class="display">
+			San Antonio: <div id="show3"></div>
+		</div>
+		<div class="display">
+			Los Angeles: <div id="show4"></div>
+		</div>
+		<div class="display">
+			Phoenix: <div id="show5"></div>
+		</div>
 		<!-- <div ng-repeat="place in locations">
 			<h3>{{ place.name }}</h3>
 			<h3>{{ place.state }}</h3> -->
