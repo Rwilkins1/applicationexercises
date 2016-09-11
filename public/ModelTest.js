@@ -57,18 +57,42 @@
 					});
 				}
 			}
+			$scope.tofahrenheit = function() {
+				if(unit == "celsius") {
+					for(var i = 0; i < display.length; i++) {
+						var content = display[i].html();
+						var converted = (content * (9/5)) + 32;
+						var rounded = Math.round(converted * 100)/100;
+						display[i].html(rounded);
+					}
+				}
+				unit = "fahrenheit";
+			}
 
-			$scope.tocelcius = function() {
+			$scope.tocelsius = function() {
 				console.log(unit);
 				if(unit == "fahrenheit") {
 					for(var i = 0; i < display.length; i++) {
-						var content = display[i].html()
+						var content = display[i].html();
 						var converted = (content - 32) * (5/9);
 						var rounded = Math.round(converted * 100)/100;
 						display[i].html(rounded);
 					}
 				}
-				unit = "celcius";
+				unit = "celsius";
+			}
+
+			$scope.tokelvin = function() {
+				console.log(unit)
+				if(unit == "fahrenheit") {
+					for(var i = 0; i < display.length; i++) {
+						var content = display[i].html();
+						var converted = (parseInt(content) + 459.67) * (5/9);
+						var rounded = Math.round(converted * 100)/100;
+						display[i].html(rounded);
+					}
+				}
+				unit = "kelvin";
 			}
 
 			$scope.locations = [{

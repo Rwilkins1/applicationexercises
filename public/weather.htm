@@ -7,7 +7,9 @@
 <body ng-app = "ModelTest">
 	<h1>Hello!</h1>
 	<main ng-controller="WeatherController as weather" ng-init="getdata()">
-		<span id="fahrenheit">F</span><span ng-click="tocelcius()" id="celcius">C</span><span id="kelvin">K</span>
+		<span ng-click="tofahrenheit()" id="fahrenheit">F</span>
+		<span ng-click="tocelsius()" id="celsius">C</span>
+		<span ng-click="tokelvin()" id="kelvin">K</span>
 		<div class="display">
 			New York:<div id="show0"></div>
 		</div>
