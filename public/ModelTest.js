@@ -65,6 +65,13 @@
 						var rounded = Math.round(converted * 100)/100;
 						display[i].html(rounded);
 					}
+				} else if(unit == "kelvin") {
+					for(var i = 0; i < display.length; i++) {
+						var content = display[i].html();
+						var converted = (content * (9/5)) - 459.67;
+						var rounded = Math.round(converted * 100)/100;
+						display[i].html(rounded);
+					}
 				}
 				unit = "fahrenheit";
 			}
@@ -78,6 +85,13 @@
 						var rounded = Math.round(converted * 100)/100;
 						display[i].html(rounded);
 					}
+				} else if(unit == "kelvin") {
+					for(var i = 0; i < display.length; i++) {
+						var content = display[i].html();
+						var converted = content - 273.15;
+						var rounded = Math.round(converted * 100)/100;
+						display[i].html(rounded);
+					}
 				}
 				unit = "celsius";
 			}
@@ -88,6 +102,13 @@
 					for(var i = 0; i < display.length; i++) {
 						var content = display[i].html();
 						var converted = (parseInt(content) + 459.67) * (5/9);
+						var rounded = Math.round(converted * 100)/100;
+						display[i].html(rounded);
+					}
+				} else if(unit == "celsius") {
+					for(var i = 0; i < display.length; i++) {
+						var content = display[i].html();
+						var converted = (parseInt(content) + 273.15);
 						var rounded = Math.round(converted * 100)/100;
 						display[i].html(rounded);
 					}
