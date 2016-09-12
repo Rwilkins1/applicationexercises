@@ -58,6 +58,30 @@
 				}
 			}
 
+			$scope.getfulldata = function($city) {
+				var url = "http://api.openweathermap.org/data/2.5/forecast/daily";
+				$http.jsonp(url, { params: {
+						APPID: "6793535174d5edec09fb58f14a9263ef",
+						q: $city,
+						cnt: 5,
+						units: "imperial",
+						callback: 'JSON_CALLBACK'
+				}}).success(function(data, status, headers, config) {
+					var visual = angular.element("#fulldata");
+					visual.html($city);
+					for(var i = 0; i < data.list.length; i++) {
+						var months = ["January", "February", "March", "April", "May", "June",
+  						"July", "August", "September", "October", "November", "December"
+						];
+						var currentdate = new Date();
+						var date = months[currentdate.getMonth()] + " " + (currentdate.getDate() + i);
+						visual.append("<h3>" + date + ": " + data.list[i].temp.max + "/" + data.list[i].temp.min + "</h3>");
+					}
+				}).error(function(data, status, headers, config) {
+					console.log("Could not retrieve data from" + url);
+				});
+			}
+
 			$scope.tofahrenheit = function() {
 				for(var i = 0; i < display.length; i++) {
 					var content = display[i].html();

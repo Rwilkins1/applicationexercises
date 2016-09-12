@@ -10,23 +10,28 @@
 		<span ng-click="tofahrenheit()" id="fahrenheit">F</span>
 		<span ng-click="tocelsius()" id="celsius">C</span>
 		<span ng-click="tokelvin()" id="kelvin">K</span>
-		<div class="display">
+		<div ng-click="getfulldata('New York')" class="display">
 			New York:<div id="show0"></div>
 		</div>
-		<div class="display">
+		<div ng-click="getfulldata('Chicago')" class="display">
 			Chicago: <div id="show1"></div>
 		</div>
-		<div class="display">
+		<div ng-click="getfulldata('Philadelphia')" class="display">
 			Philadelphia: <div id="show2"></div>
 		</div>
-		<div class="display">
+		<div ng-click="getfulldata('San Antonio')" class="display">
 			San Antonio: <div id="show3"></div>
 		</div>
-		<div class="display">
+		<div ng-click="getfulldata('Los Angeles')" class="display">
 			Los Angeles: <div id="show4"></div>
 		</div>
-		<div class="display">
+		<div ng-click="getfulldata('Phoenix')" class="display">
 			Phoenix: <div id="show5"></div>
+		</div>
+
+	<!-- Five-day forecast area -->
+		<div id="fulldata">
+
 		</div>
 		<!-- <div ng-repeat="place in locations">
 			<h3>{{ place.name }}</h3>

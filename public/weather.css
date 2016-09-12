@@ -18,3 +18,11 @@
 	background-color: skyblue;
 	padding: 5px;
 }
+#fulldata {
+	background-color: skyblue;
+	/*position: absolute;*/
+	margin-left: 300px;
+	margin-top: -300px;
+	height: 300px;
+	width: 300px;
+}
