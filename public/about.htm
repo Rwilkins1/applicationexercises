@@ -3,8 +3,11 @@
 <head>
 	<title>About</title>
 </head>
-<body ng-app = "weather.htm">
-	<h1>About Me!</h1>
+<body ng-app = "ModelTest">
+	<div ng-controller="RouteController as route" class="navbar">
+		<span ng-click="reroute('http://127.0.0.1:8000/#/')">Weather</span>
+		<span ng-click="reroute('http://127.0.0.1:8000/#/about')">About</span>
+	</div>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
 <script type="text/javascript" src="ModelTest.js"></script>
 <script type="text/javascript">

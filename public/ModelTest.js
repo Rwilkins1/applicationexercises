@@ -11,6 +11,13 @@
 			templateUrl : "/about.htm"
 		});
 	});
+		app.controller("RouteController", function($scope) {
+			$scope.reroute = function($url) {
+				if($url != window.location.href) {
+					location.replace($url);
+				}
+			}
+		});
 		app.controller("WeatherController", function($scope, $http) {
 			var unit = "fahrenheit";
 			var currentcity = "New York";

@@ -5,7 +5,10 @@
 	<title>Weather</title>
 </head>
 <body ng-app = "ModelTest">
-	<h1>Hello!</h1>
+	<div ng-controller="RouteController as route" class="navbar">
+		<span ng-click="reroute('http://127.0.0.1:8000/#/')">Weather</span>
+		<span ng-click="reroute('http://127.0.0.1:8000/#/about')">About</span>
+	</div>
 	<main ng-controller="WeatherController as weather" ng-init="getdata()">
 		<span ng-click="tofahrenheit()" id="fahrenheit">F</span>
 		<span ng-click="tocelsius()" id="celsius">C</span>
