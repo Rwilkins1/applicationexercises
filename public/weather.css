@@ -1,32 +1,51 @@
 .display {
-	background-color: skyblue;
+	background-color: #5993E5;
+	color: white;
+	border: 3px solid #2B4F81;
 	margin-top: 20px;
-	width: 100px;
-	padding: 5px;
+	width: 150px;
+	padding: 10px;
 }
 #fahrenheit {
-	background-color: skyblue;
+	background-color: #5993E5;
+	color: white;
 	margin-right: 10px;
-	padding: 5px;
+	margin-left: 175px;
+	border: 3px solid #2B4F81;
+	padding: 10px;
 }
 #celsius {
-	background-color: skyblue;
+	background-color: #5993E5;
 	margin-right: 10px;
-	padding: 5px;
+	color: white;
+	border: 3px solid #2B4F81;
+	padding: 10px;
 }
 #kelvin {
-	background-color: skyblue;
-	padding: 5px;
+	background-color: #5993E5;
+	padding: 10px;
+	border: 3px solid #2B4F81;
+	color: white;
 }
 #fulldata {
-	background-color: skyblue;
-	/*position: absolute;*/
+	background-color: #5993E5;
+	color: white;
+	border: 3px solid #2B4F81;
+	padding: 10px;
 	margin-left: 300px;
-	margin-top: -300px;
+	margin-top: -325px;
 	height: 300px;
 	width: 300px;
 }
 .navbar {
-	background-color: skyblue;
+	background-color: #5993E5;
+	color: white;
 	margin-bottom: 50px;
+	padding: 5px;
+}
+#weather {
+	margin-left: 30%;
+}
+#about {
+	margin-left: 30%;
 }

@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="weather.css">
 	<title>About</title>
 </head>
 <body ng-app = "ModelTest">
 	<div ng-controller="RouteController as route" class="navbar">
-		<span ng-click="reroute('http://127.0.0.1:8000/#/')">Weather</span>
-		<span ng-click="reroute('http://127.0.0.1:8000/#/about')">About</span>
+		<span id="weather" ng-click="reroute('http://127.0.0.1:8000/#/')">Weather</span>
+		<span id="about" ng-click="reroute('http://127.0.0.1:8000/#/about')">About</span>
 	</div>
+	<main ng-controller="AboutController as about">
+		<h2>I am proficient in:</h2>
+		<ul>
+			<div ng-repeat="languages in languages">
+				<li>{{languages.name}}</li>
+			</div>
+		</ul>
+		<h2>My qualifications:</h2>
+		<ul>
+			<div ng-repeat="qualifications in qualifications">
+				<strong><h3><li>{{qualifications.heading}}</li></h3></strong>
+				<h4>{{qualifications.body}}</h4>
+			</div>
+		</ul>
+		<h2>Some fun facts:</h2>
+		<ul>
+			<div ng-repeat="fact in funfacts">
+				<li>{{fact.fact}}</li>
+			</div>
+		</ul>
+	</main>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
 <script type="text/javascript" src="ModelTest.js"></script>
-<script type="text/javascript">
-$.get("http://api.openweathermap.org/data/2.5/forecast", {
-	APPID: "2255408d7aca211f7f864daeee1e71f9",
-	q: "San Antonio, TX",
-	cnt: 3,
-	units: "imperial"
-}).done(function(data) {
-	console.log(data);
-	console.log("Current Temp: " + data.list[0].main.temp);
-	for(var i = 0; i < data.list.length; i++) {
-		// var icon = data.list[]
-	}
-});
-</script>
 </body>
 </html>

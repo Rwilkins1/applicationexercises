@@ -5,43 +5,48 @@
 	<title>Weather</title>
 </head>
 <body ng-app = "ModelTest">
+
+<!-- Navbar -->
 	<div ng-controller="RouteController as route" class="navbar">
-		<span ng-click="reroute('http://127.0.0.1:8000/#/')">Weather</span>
-		<span ng-click="reroute('http://127.0.0.1:8000/#/about')">About</span>
+		<span id="weather" ng-click="reroute('http://127.0.0.1:8000/#/')">Weather</span>
+		<span id="about"ng-click="reroute('http://127.0.0.1:8000/#/about')">About</span>
 	</div>
+<!-- End of Navbar -->
+
 	<main ng-controller="WeatherController as weather" ng-init="getdata()">
+
+	<!-- Temperature Conversion Buttons -->
 		<span ng-click="tofahrenheit()" id="fahrenheit">F</span>
-		<span ng-click="tocelsius()" id="celsius">C</span>
+		<span ng-click="tocelsius()" id="celsius"><a>C</a></span>
 		<span ng-click="tokelvin()" id="kelvin">K</span>
+	<!-- End of Temperature Conversion Buttons -->
+
+	<!-- Left-side City Data -->
 		<div ng-click="getfulldata('New York', 'fahrenheit', 'fahrenheit')" class="display">
-			New York:<div id="show0"></div>
+			New York:<span id="show0"></span>
 		</div>
 		<div ng-click="getfulldata('Chicago', 'fahrenheit', 'fahrenheit')" class="display">
-			Chicago: <div id="show1"></div>
+			Chicago: <span id="show1"></span>
 		</div>
 		<div ng-click="getfulldata('Philadelphia', 'fahrenheit', 'fahrenheit')" class="display">
-			Philadelphia: <div id="show2"></div>
+			Philadelphia: <span id="show2"></span>
 		</div>
 		<div ng-click="getfulldata('San Antonio', 'fahrenheit', 'fahrenheit')" class="display">
-			San Antonio: <div id="show3"></div>
+			San Antonio: <span id="show3"></span>
 		</div>
 		<div ng-click="getfulldata('Los Angeles', 'fahrenheit', 'fahrenheit')" class="display">
-			Los Angeles: <div id="show4"></div>
+			Los Angeles: <span id="show4"></span>
 		</div>
 		<div ng-click="getfulldata('Phoenix', 'fahrenheit', 'fahrenheit')" class="display">
-			Phoenix: <div id="show5"></div>
+			Phoenix: <span id="show5"></span>
 		</div>
+	<!-- End of Left-side City Data -->
 
-	<!-- Five-day forecast area -->
+	<!-- Five-day Forecast Area -->
 		<div ng-init="getfulldata('New York', 'fahrenheit', 'fahrenheit')" id="fulldata">
-
 		</div>
-		<!-- <div ng-repeat="place in locations">
-			<h3>{{ place.name }}</h3>
-			<h3>{{ place.state }}</h3> -->
-			<!-- <h3 id="{{place.state}}" ng-init="{{getdata(place.name, place.state)}}"></h3> -->
-		<!-- </div> -->
-		<!-- <h3>{{getdata("New York", "NY")}}</h3> -->
+	<!-- End of Five-day Forecast Area -->
+
 	</main>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
 <script type="text/javascript" src="ModelTest.js"></script>
